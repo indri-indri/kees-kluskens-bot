@@ -1,0 +1,19 @@
+{
+  "name": "kees-kluskens-bot",
+  "version": "1.0.0",
+  "description": "Telegram KeesKluskensBot.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon index.js --exec"
+  },
+  "dependencies": {
+    "lodash": "^4.16.1",
+    "node-telegram-bot-api": "^0.21.1"
+  },
+  "devDependencies": {
+    "dotenv": "^2.0.0",
+    "nodemon": "^1.9.2"
+  },
+  "author": "Rutger Schimmel",
+  "license": "MIT"
+}
