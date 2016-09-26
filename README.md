@@ -1,6 +1,7 @@
 # Kees Kluskens Bot
 
-## Usage
+## Development
 ```
+npm install
 npm start
 ```
