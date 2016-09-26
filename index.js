@@ -50,3 +50,8 @@ bot.on('message', function (msg) {
     bot.sendMessage(msg.chat.id, resp);
   }
 });
+
+bot.onText(/communis/, function (msg, match) {
+  const resp = '☭☭☭ RELIGIE IS DE OPIUM VAN HET VOLK ☭☭☭';
+  bot.sendMessage(msg.chat.id, resp);
+});
