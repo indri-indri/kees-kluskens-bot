@@ -55,3 +55,8 @@ bot.onText(/communis/, function (msg, match) {
   const resp = '☭☭☭ RELIGIE IS DE OPIUM VAN HET VOLK ☭☭☭';
   bot.sendMessage(msg.chat.id, resp);
 });
+
+bot.onText(/apple/, function (msg, match) {
+  const resp = 'rip steve';
+  bot.sendMessage(msg.chat.id, resp);
+});
