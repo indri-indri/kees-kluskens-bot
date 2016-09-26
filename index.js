@@ -1,3 +1,5 @@
+'use strict'
+
 require('dotenv').config();
 const TelegramBot = require('node-telegram-bot-api');
 const _ = require('lodash');
@@ -7,7 +9,7 @@ const bot = new TelegramBot(token, {
   polling: true
 });
 
-var conversations = [];
+const conversations = [];
 
 bot.onText(/kees/, function (msg, match) {
   const resp = 'rot gewoon op joh kk joch';
@@ -18,7 +20,7 @@ bot.on('message', function (msg) {
   const chatId = msg.chat.id;
   const userId = msg.from.id;
 
-  var conversation = _.find(conversations, ['chatId', msg.chat.id]);
+  let conversation = _.find(conversations, ['chatId', msg.chat.id]);
 
   if (!conversation) {
     conversations.push({
