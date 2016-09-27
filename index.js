@@ -90,6 +90,11 @@ bot.onText(/doei/i, function (msg, match) {
   bot.sendVoice(msg.chat.id, audio);
 });
 
+bot.onText(/^inb4/i, function (msg, match) {
+  const resp = 'inb4 opkankeren';
+  bot.sendMessage(msg.chat.id, resp);
+});
+
 bot.onText(/lijden/i, function (msg, match) {
     const now = moment();
 
