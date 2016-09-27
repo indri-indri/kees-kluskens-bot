@@ -11,7 +11,7 @@ const bot = new TelegramBot(token, {
 
 const conversations = [];
 
-bot.onText(/kees/, function (msg, match) {
+bot.onText(/kees/i, function (msg, match) {
   let resp = 'rot gewoon op joh kk joch';
 
   if (msg.text.match(/moet/ig)) {
@@ -64,12 +64,12 @@ bot.on('message', function (msg) {
   }
 });
 
-bot.onText(/communis/, function (msg, match) {
+bot.onText(/communis/i, function (msg, match) {
   const resp = '☭☭☭ RELIGIE IS DE OPIUM VAN HET VOLK ☭☭☭';
   bot.sendMessage(msg.chat.id, resp);
 });
 
-bot.onText(/apple/, function (msg, match) {
+bot.onText(/apple/i, function (msg, match) {
   const resp = 'rip steve';
   bot.sendMessage(msg.chat.id, resp);
 });
