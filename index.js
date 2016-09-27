@@ -30,7 +30,6 @@ bot.onText(/kees/i, function (msg, match) {
 });
 
 bot.on('message', function (msg) {
-  console.log(msg);
   const chatId = msg.chat.id;
   const userId = msg.from.id;
 
@@ -44,8 +43,6 @@ bot.on('message', function (msg) {
         count: 0,
       }
     });
-
-    console.log('New conversation', msg.chat);
 
     conversation = _.find(conversations, ['chatId', msg.chat.id]);
   }
