@@ -73,3 +73,8 @@ bot.onText(/apple/i, function (msg, match) {
   const resp = 'rip steve';
   bot.sendMessage(msg.chat.id, resp);
 });
+
+bot.onText(/me.*irl/i, function (msg, match) {
+  const resp = 'me too thanks';
+  bot.sendMessage(msg.chat.id, resp);
+});
