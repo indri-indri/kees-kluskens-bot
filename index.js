@@ -5,6 +5,7 @@ const TelegramBot = require('node-telegram-bot-api');
 const fs = require('fs');
 const _ = require('lodash');
 const moment = require('moment');
+const got = require('got');
 
 moment.locale('nl');
 
@@ -98,6 +99,26 @@ bot.onText(/^inb4/i, function (msg, match) {
 bot.onText(/\b(grap)\b/i, function (msg, match) {
   const resp = 'je LEVEN is een grap!';
   bot.sendMessage(msg.chat.id, resp);
+});
+
+bot.onText(/\?$/, function (msg, match) {
+  const textClean = msg.text.replace(/[^a-zA-Z0-9 ]/g, '');
+  const query = textClean.replace(/\s+/g, '+');
+  const url = `http://www.google.com/search?q=${query}&btnI`;
+
+  got(url)
+    .then(response => {
+      const responseUrl = response.socket._httpMessage.socket._httpMessage.socket._httpMessage.res.url;
+
+      if (responseUrl.match(/google/ig)) {
+        return;
+      }
+
+      const resp = `[ ](${responseUrl})`;
+      bot.sendMessage(msg.chat.id, resp, {
+        parse_mode: 'Markdown',
+      });
+    });
 });
 
 bot.onText(/lijden/i, function (msg, match) {
