@@ -95,6 +95,11 @@ bot.onText(/^inb4/i, function (msg, match) {
   bot.sendMessage(msg.chat.id, resp);
 });
 
+bot.onText(/\b(grap)\b/i, function (msg, match) {
+  const resp = 'je LEVEN is een grap!';
+  bot.sendMessage(msg.chat.id, resp);
+});
+
 bot.onText(/lijden/i, function (msg, match) {
     const now = moment();
 
