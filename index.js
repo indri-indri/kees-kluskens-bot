@@ -85,12 +85,12 @@ bot.onText(/;p\[/, function (msg, match) {
   bot.sendSticker(msg.chat.id, 'BQADBAADOQEAAqBWfgAB2V2T9yivgk8C');
 });
 
-bot.onText(/doei/, function (msg, match) {
+bot.onText(/doei/i, function (msg, match) {
   const audio = fs.readFileSync('sounds/doeihe.wav');
   bot.sendVoice(msg.chat.id, audio);
 });
 
-bot.onText(/lijden/, function (msg, match) {
+bot.onText(/lijden/i, function (msg, match) {
     const now = moment();
 
     const daysLeft = theEnd.diff(now, 'days');
