@@ -2,6 +2,7 @@
 
 require('dotenv').config();
 const TelegramBot = require('node-telegram-bot-api');
+const fs = require('fs');
 const _ = require('lodash');
 
 const token = process.env.TOKEN;
@@ -79,4 +80,9 @@ bot.onText(/me.*irl/i, function (msg, match) {
 
 bot.onText(/;p\[/, function (msg, match) {
   bot.sendSticker(msg.chat.id, 'BQADBAADOQEAAqBWfgAB2V2T9yivgk8C');
+});
+
+bot.onText(/doei/, function (msg, match) {
+  const audio = fs.readFileSync('sounds/doeihe.wav');
+  bot.sendVoice(msg.chat.id, audio);
 });
