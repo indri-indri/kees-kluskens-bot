@@ -30,6 +30,7 @@ bot.onText(/kees/i, function (msg, match) {
 });
 
 bot.on('message', function (msg) {
+  console.log(msg);
   const chatId = msg.chat.id;
   const userId = msg.from.id;
 
@@ -77,4 +78,8 @@ bot.onText(/apple/i, function (msg, match) {
 bot.onText(/me.*irl/i, function (msg, match) {
   const resp = 'me too thanks';
   bot.sendMessage(msg.chat.id, resp);
+});
+
+bot.onText(/;p\[/, function (msg, match) {
+  bot.sendSticker(msg.chat.id, 'BQADBAADOQEAAqBWfgAB2V2T9yivgk8C');
 });
