@@ -4,12 +4,15 @@ require('dotenv').config();
 const TelegramBot = require('node-telegram-bot-api');
 const fs = require('fs');
 const _ = require('lodash');
+const moment = require('moment');
+
+moment.locale('nl');
 
 const token = process.env.TOKEN;
 const bot = new TelegramBot(token, {
   polling: true
 });
-
+const theEnd = moment('2017-02-10T12:11:42+00:00');
 const conversations = [];
 
 bot.onText(/kees/i, function (msg, match) {
@@ -85,4 +88,15 @@ bot.onText(/;p\[/, function (msg, match) {
 bot.onText(/doei/, function (msg, match) {
   const audio = fs.readFileSync('sounds/doeihe.wav');
   bot.sendVoice(msg.chat.id, audio);
+});
+
+bot.onText(/lijden/, function (msg, match) {
+    const now = moment();
+
+    const daysLeft = theEnd.diff(now, 'days');
+    const monthsLeft = theEnd.diff(now, 'months', true);
+
+    const resp = `Nog ${daysLeft} dagen, of ${monthsLeft.toFixed(1)} maanden tot De Wedergeboorte op 10 februari 2017.`;
+
+    bot.sendMessage(msg.chat.id, resp);
 });

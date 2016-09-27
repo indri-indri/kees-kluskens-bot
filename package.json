@@ -9,6 +9,7 @@
   "dependencies": {
     "fs": "0.0.1-security",
     "lodash": "4.16.1",
+    "moment": "^2.15.1",
     "node-telegram-bot-api": "0.21.1"
   },
   "devDependencies": {
