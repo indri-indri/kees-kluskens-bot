@@ -21,6 +21,7 @@
 		"space-in-parens": "error",
 		"space-before-blocks": "error",
 		"no-unused-vars": "error",
+		"no-use-before-define": "error",
 		"no-dupe-keys": "error",
 		"valid-typeof": "error",
 		"object-curly-spacing": ["error", "always"],
