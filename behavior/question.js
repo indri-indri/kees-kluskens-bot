@@ -10,7 +10,7 @@ module.exports = function (bot) {
 			.then(response => {
 				const responseUrl = response.socket._httpMessage.socket._httpMessage.socket._httpMessage.res.url;
 
-				const resp = `[ ](${responseUrl})`;
+				const resp = `[${responseUrl}](${responseUrl})`;
 				bot.sendMessage(msg.chat.id, resp, {
 					parse_mode: 'Markdown',
 				});
