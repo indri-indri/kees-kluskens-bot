@@ -2,18 +2,15 @@ const got = require('got');
 
 module.exports = function (bot) {
 	bot.onText(/\?$/, msg => {
-		const textClean = msg.text.replace(/[^a-zA-Z0-9 ]/g, '');
-		const query = textClean.replace(/\s+/g, '+');
-		const url = `http://www.google.com/search?q=${query}&btnI`;
+		const query = msg.text.replace(/[^a-zA-Z0-9 ]/g, '');
+		const url = `https://duckduckgo.com/?q=!ducky+${encodeURIComponent(query)}`
 
 		got(url)
 			.then(response => {
-				const responseUrl = response.socket._httpMessage.socket._httpMessage.socket._httpMessage.res.url;
+				const responseUrl = response.body.match(/=http(.*?)(?=')/)[0].substring(1);
+				const responseUrlDecoded = decodeURIComponent(responseUrl);
 
-				const resp = `[${responseUrl}](${responseUrl})`;
-				bot.sendMessage(msg.chat.id, resp, {
-					parse_mode: 'Markdown',
-				});
+				bot.sendMessage(msg.chat.id, responseUrlDecoded);
 			});
 	});
 }
