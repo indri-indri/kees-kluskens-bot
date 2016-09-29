@@ -1,5 +1,5 @@
 module.exports = function (bot) {
-	bot.onText(/kees/i, msg => {
+	bot.onText(/^kees/i, msg => {
 		let resp = 'rot gewoon op joh kk joch';
 
 		if (msg.text.match(/moet/ig)) {
