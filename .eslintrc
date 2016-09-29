@@ -37,6 +37,7 @@
 		"no-extra-semi": "error",
 		"no-func-assign": "error",
 		"no-invalid-regexp": "error",
+		"comma-dangle": ["error", "always"],
 		"keyword-spacing": ["error", {
 			"after": true
 		}],
