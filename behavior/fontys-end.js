@@ -9,7 +9,7 @@ module.exports = function (bot) {
 		const daysLeft = theEnd.diff(now, 'days');
 		const monthsLeft = theEnd.diff(now, 'months', true);
 
-		const resp = `Nog ${daysLeft} dagen, of ${monthsLeft.toFixed(1)} maanden tot De Wedergeboorte op 10 februari 2017.`;
+		const resp = `nog ${daysLeft} dagen (${monthsLeft.toFixed(1)} maanden) tot de WEDERGEBOORTE op 10 februari 2017`;
 
 		bot.sendMessage(msg.chat.id, resp);
 	});
