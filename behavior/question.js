@@ -1,7 +1,7 @@
 const got = require('got');
 
 module.exports = function (bot) {
-	bot.onText(/\?$/, msg => {
+	bot.onText(/\?\?$/, msg => {
 		const query = msg.text.replace(/[^a-zA-Z0-9 ]/g, '');
 		const url = `https://duckduckgo.com/?q=!ducky+${encodeURIComponent(query)}`;
 
