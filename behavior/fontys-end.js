@@ -1,6 +1,6 @@
 const moment = require('moment');
 
-const theEnd = moment('2017-02-10T12:11:42+00:00');
+const theEnd = moment('2017-02-03T12:11:42+00:00');
 
 module.exports = function (bot) {
 	bot.onText(/lijden/i, msg => {
