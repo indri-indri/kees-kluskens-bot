@@ -27,11 +27,13 @@ module.exports = function (bot) {
 			const just = [
 				'gwn ',
 				'gewoon ',
+				'lekker ',
 				'',
 			];
 
 			const distance = [
 				'',
+				'n eind ',
 				'een eind ',
 			];
 
