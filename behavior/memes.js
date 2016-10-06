@@ -10,4 +10,8 @@ module.exports = function (bot) {
 	bot.onText(/;p\[/, msg => {
 		bot.sendSticker(msg.chat.id, 'BQADBAADOQEAAqBWfgAB2V2T9yivgk8C');
 	});
+	bot.onText(/ik.*ihe/i, msg => {
+		const resp = 'ik ook bedankt';
+		bot.sendMessage(msg.chat.id, resp);
+	});
 };
