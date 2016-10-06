@@ -17,8 +17,6 @@ module.exports = function (bot) {
 				resp = 'ik moet helemaal niks!';
 			}
 		} else {
-			'rot gewoon op joh kk joch';
-
 			const go = [
 				'rot ',
 				'kk ',
