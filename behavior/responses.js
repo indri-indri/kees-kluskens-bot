@@ -21,4 +21,8 @@ module.exports = function (bot) {
 		const audio = fs.readFileSync('sounds/doeihe.wav');
 		bot.sendVoice(msg.chat.id, audio);
 	});
+	bot.onText(/systemctl/i, msg => {
+		const resp = 'als het goed is wel man';
+		bot.sendMessage(msg.chat.id, resp);
+	});
 };
