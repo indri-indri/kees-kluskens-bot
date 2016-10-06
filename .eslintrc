@@ -37,11 +37,12 @@
 		"no-extra-semi": "error",
 		"no-func-assign": "error",
 		"no-invalid-regexp": "error",
-		"comma-dangle": ["error", "always"],
+		"comma-dangle": ["error", "always-multiline"],
 		"keyword-spacing": ["error", {
 			"after": true
 		}],
-        "arrow-body-style": ["error", "as-needed"],
-        "arrow-parens": ["error", "as-needed"]
+		"arrow-body-style": ["error", "as-needed"],
+		"arrow-parens": ["error", "as-needed"],
+		"semi": "error"
 	}
 }

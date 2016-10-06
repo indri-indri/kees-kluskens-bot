@@ -74,4 +74,4 @@ module.exports = function (bot) {
 
 		bot.sendMessage(msg.chat.id, resp);
 	});
-}
+};

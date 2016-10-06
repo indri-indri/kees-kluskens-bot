@@ -21,4 +21,4 @@ module.exports = function (bot) {
 		const audio = fs.readFileSync('sounds/doeihe.wav');
 		bot.sendVoice(msg.chat.id, audio);
 	});
-}
+};

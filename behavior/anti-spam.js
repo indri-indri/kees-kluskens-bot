@@ -15,7 +15,7 @@ module.exports = function (bot) {
 				lastMessage: {
 					userId,
 					count: 0,
-				}
+				},
 			});
 
 			conversation = _.find(conversations, ['chatId', msg.chat.id]);
@@ -35,4 +35,4 @@ module.exports = function (bot) {
 			bot.sendMessage(msg.chat.id, resp);
 		}
 	});
-}
+};
