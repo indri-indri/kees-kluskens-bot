@@ -16,7 +16,7 @@ module.exports = function (bot) {
 			} else {
 				resp = 'ik moet helemaal niks!';
 			}
-		} else if (msg.text.match(/kun|kan|wil/i)) {
+		} else if (msg.text.match(/\b(kun|kan|wil)\b/i)) {
 			resp = 'ik ben bezig met een webpack core meeting';
 		} else {
 			const go = [
