@@ -9,7 +9,7 @@ module.exports = function (bot) {
 		if (msg.text.match(/moet/i)) {
 			if (msg.text.match(/ik/i)) {
 				if (Math.random() < .5) {
-					resp = 'je doet maar!';
+					resp = 'haha ja';
 				} else {
 					resp = 'ben je mal!';
 				}
