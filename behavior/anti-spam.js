@@ -1,4 +1,5 @@
 const _ = require('lodash');
+const got = require('got');
 
 const conversations = [];
 
@@ -8,6 +9,21 @@ module.exports = function (bot) {
 		const userId = msg.from.id;
 
 		let conversation = _.find(conversations, ['chatId', msg.chat.id]);
+
+		if (conversation && msg.text.match(/^\?\?*.$/)) {
+			const query = conversation.lastMessage.text.replace(/[^a-zA-Z0-9 ]/g, '');
+			const url = `https://duckduckgo.com/?q=!ducky+${encodeURIComponent(query)}&kl=nl-nl`;
+
+			got(url)
+				.then(response => {
+					const responseUrl = response.body.match(/=http(.*?)(?=')/)[0].substring(1);
+					const responseUrlDecoded = decodeURIComponent(responseUrl);
+
+					bot.sendMessage(msg.chat.id, responseUrlDecoded);
+				});
+
+			return;
+		}
 
 		if (!conversation) {
 			conversations.push({
@@ -21,14 +37,11 @@ module.exports = function (bot) {
 			conversation = _.find(conversations, ['chatId', msg.chat.id]);
 		}
 
-		if (conversation.lastMessage.userId === userId) {
-			conversation.lastMessage.count++;
-		} else {
-			conversation.lastMessage = {
-				userId,
-				count: 1,
-			};
-		}
+		conversation.lastMessage = {
+			userId,
+			count: conversation.lastMessage.userId === userId ? conversation.lastMessage.count + 1 : 1,
+			text: msg.text,
+		};
 
 		if (conversation.lastMessage.count === 15) {
 			const resp = 'KK OP MET JE SPAM';
