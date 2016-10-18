@@ -10,6 +10,10 @@ module.exports = function (bot) {
 
 		let conversation = _.find(conversations, ['chatId', msg.chat.id]);
 
+		if (conversation.lastMessage.text === msg.text) {
+			bot.sendMessage(msg.chat.id, msg.text);
+		}
+
 		if (conversation && msg.text.match(/^\?\?*.$/)) {
 			const query = conversation.lastMessage.text.replace(/[^a-zA-Z0-9 ]/g, '');
 			const url = `https://duckduckgo.com/?q=!ducky+${encodeURIComponent(query)}&kl=nl-nl`;
