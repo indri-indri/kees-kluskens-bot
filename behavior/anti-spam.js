@@ -10,7 +10,7 @@ module.exports = function (bot) {
 
 		let conversation = _.find(conversations, ['chatId', msg.chat.id]);
 
-		if (conversation.lastMessage.text === msg.text) {
+		if (conversation && conversation.lastMessage.text === msg.text) {
 			bot.sendMessage(msg.chat.id, msg.text);
 		}
 
