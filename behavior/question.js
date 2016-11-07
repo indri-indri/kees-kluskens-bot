@@ -2,7 +2,7 @@ const got = require('got');
 
 module.exports = function (bot) {
 	bot.onText(/\?\?$/, msg => {
-		const query = msg.text.replace(/\/r/g, '');
+		const query = msg.text.replace(/\?/g, '');
 
 		if (!query) {
 			return;
