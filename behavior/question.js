@@ -2,7 +2,13 @@ const got = require('got');
 
 module.exports = function (bot) {
 	bot.onText(/\?\?$/, msg => {
-		const url = `https://duckduckgo.com/?q=!ducky+${encodeURIComponent(msg.text)}&kl=nl-nl`;
+		const query = msg.text.replace(/\/r/g, '');
+
+		if (!query) {
+			return;
+		}
+
+		const url = `https://duckduckgo.com/?q=!ducky+${encodeURIComponent(query)}&kl=nl-nl`;
 
 		got(url)
 			.then(response => {
