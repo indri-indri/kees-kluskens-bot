@@ -14,7 +14,7 @@ module.exports = function (bot) {
 		const resp = 'ik ook bedankt';
 		bot.sendMessage(msg.chat.id, resp);
 	});
-	bot.onText(/i/i, msg => {
+	bot.onText(/goed idee/i, msg => {
 		const resp = 'zullen we daar een app voor maken';
 		bot.sendMessage(msg.chat.id, resp);
 	});
