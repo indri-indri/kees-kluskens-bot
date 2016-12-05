@@ -25,4 +25,8 @@ module.exports = function (bot) {
 		const resp = 'als het goed is wel man';
 		bot.sendMessage(msg.chat.id, resp);
 	});
+	bot.onText(/^hmmm/i, msg => {
+		const resp = 'wiet';
+		bot.sendMessage(msg.chat.id, resp);
+	});
 };
