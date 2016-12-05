@@ -74,6 +74,8 @@ module.exports = function (bot) {
 			}
 		} else if (msg.text.match(/\b(kun|kan|wil)\b/i)) {
 			resp = 'ik ben bezig met een webpack core meeting';
+		} else if (msg.text.match(/kk/i)) {
+			resp = 'kees kk';
 		} else {
 			resp = Math.random() > .5 ? 'mavic pro' : getSwearReaction();
 		}
