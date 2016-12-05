@@ -29,9 +29,4 @@ module.exports = function (bot) {
 		const resp = 'wiet';
 		bot.sendMessage(msg.chat.id, resp);
 	});
-	bot.onText(/fontys/i, msg => {
-		for (let i = 0; i < 10; i++) {
-			bot.sendSticker(msg.chat.id, 'BQADBAADOQEAAqBWfgAB2V2T9yivgk8C');
-		}
-	});
 };
