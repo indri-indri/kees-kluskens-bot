@@ -29,4 +29,10 @@ module.exports = function (bot) {
 		const resp = 'wiet';
 		bot.sendMessage(msg.chat.id, resp);
 	});
+	bot.onText(/^kk /i, msg => {
+		if (Math.random() < .2) {
+			const resp = 'Zei je nou kikker?';
+			bot.sendMessage(msg.chat.id, resp);
+		}
+	});
 };
