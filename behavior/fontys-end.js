@@ -8,8 +8,12 @@ module.exports = function (bot) {
 
 		const daysLeft = theEnd.diff(now, 'days');
 		const monthsLeft = theEnd.diff(now, 'months', true);
-
-		const resp = `nog ${daysLeft} dagen (${monthsLeft.toFixed(1)} maanden) tot de WEDERGEBOORTE op 28 januari 2017`;
+		
+		let resp = `nog ${daysLeft} dagen (${monthsLeft.toFixed(1)} maanden) tot de WEDERGEBOORTE op 28 januari 2017`;
+		
+		if (daysLeft < 1) {
+			resp = 'Vive la révolution!'; 
+		}
 
 		bot.sendMessage(msg.chat.id, resp);
 	});
