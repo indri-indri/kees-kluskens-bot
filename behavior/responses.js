@@ -17,10 +17,6 @@ module.exports = function (bot) {
 		const resp = 'rip steve';
 		bot.sendMessage(msg.chat.id, resp);
 	});
-	bot.onText(/doei/i, msg => {
-		const audio = fs.readFileSync('sounds/doeihe.wav');
-		bot.sendVoice(msg.chat.id, audio);
-	});
 	bot.onText(/systemctl/i, msg => {
 		const resp = 'als het goed is wel man';
 		bot.sendMessage(msg.chat.id, resp);
@@ -34,5 +30,13 @@ module.exports = function (bot) {
 			const resp = 'Zei je nou kikker?';
 			bot.sendMessage(msg.chat.id, resp);
 		}
+	});
+	bot.onText(/doei/i, msg => {
+		const audio = fs.readFileSync('sounds/doeihe.wav');
+		bot.sendVoice(msg.chat.id, audio);
+	});
+	bot.onText(/dudu/i, msg => {
+		const audio = fs.readFileSync('sounds/sandstorm.wav');
+		bot.sendVoice(msg.chat.id, audio);
 	});
 };
