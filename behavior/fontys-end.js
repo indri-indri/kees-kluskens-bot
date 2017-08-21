@@ -13,18 +13,18 @@ module.exports = function (bot) {
 		
 		if (daysLeft < 1) {
 			resp = 'Vive la révolution!';
-			bot.sendSticker(msg.chat.id, 'BQADBAADOQEAAqBWfgAB2V2T9yivgk8C');
-			bot.sendSticker(msg.chat.id, 'BQADBAADOQEAAqBWfgAB2V2T9yivgk8C');
-			bot.sendSticker(msg.chat.id, 'BQADBAADOQEAAqBWfgAB2V2T9yivgk8C');
-			bot.sendSticker(msg.chat.id, 'BQADBAADOQEAAqBWfgAB2V2T9yivgk8C');
-			bot.sendSticker(msg.chat.id, 'BQADBAADOQEAAqBWfgAB2V2T9yivgk8C');
-			bot.sendSticker(msg.chat.id, 'BQADBAADOQEAAqBWfgAB2V2T9yivgk8C');
-			bot.sendSticker(msg.chat.id, 'BQADBAADOQEAAqBWfgAB2V2T9yivgk8C');
-			bot.sendSticker(msg.chat.id, 'BQADBAADOQEAAqBWfgAB2V2T9yivgk8C');
-			bot.sendSticker(msg.chat.id, 'BQADBAADOQEAAqBWfgAB2V2T9yivgk8C');
-			bot.sendSticker(msg.chat.id, 'BQADBAADOQEAAqBWfgAB2V2T9yivgk8C');
-			bot.sendSticker(msg.chat.id, 'BQADBAADOQEAAqBWfgAB2V2T9yivgk8C');
-			bot.sendSticker(msg.chat.id, 'BQADBAADOQEAAqBWfgAB2V2T9yivgk8C');
+			bot.sendSticker(msg.chat.id, 'CAADAgADYgMAAvoLtghdGzKPtFIboQI');
+			bot.sendSticker(msg.chat.id, 'CAADAgADYgMAAvoLtghdGzKPtFIboQI');
+			bot.sendSticker(msg.chat.id, 'CAADAgADYgMAAvoLtghdGzKPtFIboQI');
+			bot.sendSticker(msg.chat.id, 'CAADAgADYgMAAvoLtghdGzKPtFIboQI');
+			bot.sendSticker(msg.chat.id, 'CAADAgADYgMAAvoLtghdGzKPtFIboQI');
+			bot.sendSticker(msg.chat.id, 'CAADAgADYgMAAvoLtghdGzKPtFIboQI');
+			bot.sendSticker(msg.chat.id, 'CAADAgADYgMAAvoLtghdGzKPtFIboQI');
+			bot.sendSticker(msg.chat.id, 'CAADAgADYgMAAvoLtghdGzKPtFIboQI');
+			bot.sendSticker(msg.chat.id, 'CAADAgADYgMAAvoLtghdGzKPtFIboQI');
+			bot.sendSticker(msg.chat.id, 'CAADAgADYgMAAvoLtghdGzKPtFIboQI');
+			bot.sendSticker(msg.chat.id, 'CAADAgADYgMAAvoLtghdGzKPtFIboQI');
+			bot.sendSticker(msg.chat.id, 'CAADAgADYgMAAvoLtghdGzKPtFIboQI');
 		}
 
 		bot.sendMessage(msg.chat.id, resp);
