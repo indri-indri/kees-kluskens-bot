@@ -75,7 +75,7 @@ module.exports = function (bot) {
 		} else if (msg.text.match(/\b(kun|kan|wil)\b/i)) {
 			resp = 'ik ben bezig met een webpack core meeting';
 		} else {
-			resp = Math.random() > .5 ? '*mijn drone footage' : getSwearReaction();
+			resp = Math.random() > .75 ? '*mijn drone footage' : getSwearReaction();
 		}
 
 		bot.sendMessage(msg.chat.id, resp);
