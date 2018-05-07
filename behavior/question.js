@@ -35,7 +35,7 @@ module.exports = function(bot) {
 
 		got(url).then(response => {
 			const responseUrl = response.body
-				.split('b_algoheader')[1]
+				.split('b_algo')[1]
 				.match(/<a href="([^<]+)" /)[0]
 				.substring('<a href="'.length)
 				.slice(0, -2);
