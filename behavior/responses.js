@@ -14,8 +14,10 @@ module.exports = function (bot) {
 		bot.sendMessage(msg.chat.id, resp);
 	});
 	bot.onText(/apple/i, msg => {
-		const resp = 'rip steve';
-		bot.sendMessage(msg.chat.id, resp);
+		if (Math.random() < .15) {
+			const resp = 'rip steve';
+			bot.sendMessage(msg.chat.id, resp);
+		}
 	});
 	bot.onText(/systemctl/i, msg => {
 		const resp = 'als het goed is wel man';
