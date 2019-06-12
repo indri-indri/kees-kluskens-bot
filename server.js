@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const spawn = require('child_process').spawn;
 
-app.post('/', function (req, res) {
+app.post('/', function(req, res) {
   res.send('Post');
 
   const update = spawn('./update.sh');

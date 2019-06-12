@@ -9,7 +9,7 @@ moment.locale('nl');
 
 const token = process.env.TOKEN;
 const bot = new TelegramBot(token, {
-	polling: true,
+  polling: true,
 });
 
 require('./behavior/anti-spam.js')(bot);
