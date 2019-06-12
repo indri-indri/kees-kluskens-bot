@@ -1,7 +1,7 @@
 {
   "name": "kees-kluskens-bot",
   "version": "1.0.0",
-  "description": "Telegram KeesKluskensBot",
+  "description": "Telegram KeesKluskensBot.",
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon index.js"
