@@ -73,7 +73,7 @@ module.exports = function (bot) {
 				resp = 'ik moet helemaal niks!';
 			}
 		} else if (msg.text.match(/\b(kun|kan|wil)\b/i)) {
-			resp = randomElement(['ik ben bezig met een webpack core meeting', 'Ah balen wilde er vnv stoned naartoe'];
+			resp = randomElement(['ik ben bezig met een webpack core meeting', 'Ah balen wilde er vnv stoned naartoe']);
 		} else {
 			resp = Math.random() > .75 ? '*mijn drone footage' : getSwearReaction();
 		}
