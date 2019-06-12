@@ -1,83 +1,96 @@
-function randomElement (array) {
-	return array[Math.floor(Math.random() * array.length)];
+function randomElement(array) {
+  return array[Math.floor(Math.random() * array.length)];
 }
 
-function getSwearReaction () {
-	const go = [
-		'rot ',
-		'kk ',
-		'tief ',
-		'flikker ',
-	];
+function getSwearReaction() {
+  const go = [
+    'rot ',
+    'kk ',
+    'tief ',
+    'flikker ',
+  ];
 
-	const just = [
-		'gwn ',
-		'gewoon ',
-		'lekker ',
-		'',
-	];
+  const just = [
+    'gwn ',
+    'gewoon ',
+    'lekker ',
+    '',
+  ];
 
-	const distance = [
-		'',
-		'n eind ',
-		'een eind ',
-	];
+  const distance = [
+    '',
+    'n eind ',
+    'een eind ',
+  ];
 
-	const man = [
-		' joh',
-		' gast',
-		' man',
-		'',
-	];
+  const man = [
+    ' joh',
+    ' gast',
+    ' man',
+    '',
+  ];
 
-	const separator = [
-		', ',
-		' ',
-	];
+  const separator = [
+    ', ',
+    ' ',
+  ];
 
-	const disease = [
-		'kk',
-		'tyfus',
-		'tering',
-	];
+  const disease = [
+    'kk',
+    'tyfus',
+    'tering',
+  ];
 
-	const space = [
-		' ',
-		'',
-	];
+  const space = [
+    ' ',
+    '',
+  ];
 
-	const person = [
-		'joch',
-		'jong',
-		'kind',
-		'debiel',
-		'mongool',
-		'mongooltje',
-	];
+  const person = [
+    'joch',
+    'jong',
+    'kind',
+    'debiel',
+    'mongool',
+    'mongooltje',
+  ];
 
-	return randomElement(go) + randomElement(just) + randomElement(distance) + 'op' + randomElement(man) + randomElement(separator) + randomElement(disease) + randomElement(space) + randomElement(person);
+  return randomElement(go) + randomElement(just) + randomElement(distance) +
+      'op' + randomElement(man) + randomElement(separator) +
+      randomElement(disease) + randomElement(space) + randomElement(person);
 }
 
-module.exports = function (bot) {
-	bot.onText(/^kees/i, msg => {
-		let resp;
+module.exports = function(bot) {
+  bot.onText(/^kees/i, msg => {
+    let resp;
 
-		if (msg.text.match(/moet/i)) {
-			if (msg.text.match(/ik/i)) {
-				if (Math.random() < .5) {
-					resp = 'haha ja';
-				} else {
-					resp = 'ben je mal!';
-				}
-			} else {
-				resp = 'ik moet helemaal niks!';
-			}
-		} else if (msg.text.match(/\b(kun|kan|wil)\b/i)) {
-			resp = randomElement(['ik ben bezig met een webpack core meeting', 'Ah balen wilde er vnv stoned naartoe']);
-		} else {
-			resp = Math.random() > .75 ? '*mijn drone footage' : getSwearReaction();
-		}
+    if (msg.text.match(/moet/i)) {
+      if (msg.text.match(/ik/i)) {
+        if (Math.random() < .5) {
+          resp = 'haha ja';
+        } else {
+          resp = 'ben je mal!';
+        }
+      } else {
+        resp = 'ik moet helemaal niks!';
+      }
+    } else if (msg.text.match(/\b(kun|kan|wil)\b/i)) {
+      resp = randomElement([
+        'ik ben bezig met een webpack core meeting',
+        'Ah balen wilde er vnv stoned naartoe'
+      ]);
+    } else {
+      const random = Math.random();
 
-		bot.sendMessage(msg.chat.id, resp);
-	});
+      if (random < 0.2) {
+        resp = getSwearReaction();
+      } else if (random < 0.25) {
+        resp = '*mijn drone footage';
+      } else {
+        return;
+      }
+    }
+
+    bot.sendMessage(msg.chat.id, resp);
+  });
 };
