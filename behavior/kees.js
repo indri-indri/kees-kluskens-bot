@@ -77,7 +77,9 @@ module.exports = function(bot) {
     } else if (msg.text.match(/\b(kun|kan|wil)\b/i)) {
       resp = randomElement([
         'ik ben bezig met een webpack core meeting',
-        'Ah balen wilde er vnv stoned naartoe'
+        'Ah balen wilde er vnv stoned naartoe',
+		'is goed',
+		'deal',
       ]);
     } else {
       const random = Math.random();
