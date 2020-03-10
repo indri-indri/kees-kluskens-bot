@@ -39,6 +39,7 @@ function getSwearReaction() {
     'kk',
     'tyfus',
     'tering',
+	'corona',
   ];
 
   const space = [
