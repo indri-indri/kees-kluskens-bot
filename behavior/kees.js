@@ -88,7 +88,7 @@ module.exports = function(bot) {
       if (random < 0.2) {
         resp = getSwearReaction();
       } else if (random < 0.25) {
-        resp = '*mijn drone footage';
+        resp = '*mijn laser footage';
       } else {
         return;
       }
