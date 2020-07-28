@@ -3,8 +3,8 @@ const got = require('got');
 
 const conversations = [];
 
-module.exports = function(bot) {
-  bot.on('message', msg => {
+module.exports = function (bot) {
+  bot.on('message', (msg) => {
     const chatId = msg.chat.id;
     const userId = msg.from.id;
 
@@ -16,12 +16,14 @@ module.exports = function(bot) {
 
     if (conversation && msg.text.match(/^\?\?*.$/)) {
       const query = conversation.lastMessage.text.replace(/[^a-zA-Z0-9 ]/g, '');
-      const url = `https://duckduckgo.com/?q=!ducky+${
-          encodeURIComponent(query)}&kl=nl-nl`;
+      const url = `https://duckduckgo.com/?q=!ducky+${encodeURIComponent(
+        query
+      )}&kl=nl-nl`;
 
-      got(url).then(response => {
-        const responseUrl =
-            response.body.match(/=http(.*?)(?=')/)[0].substring(1);
+      got(url).then((response) => {
+        const responseUrl = response.body
+          .match(/=http(.*?)(?=')/)[0]
+          .substring(1);
         const responseUrlDecoded = decodeURIComponent(responseUrl);
 
         bot.sendMessage(msg.chat.id, responseUrlDecoded);
@@ -44,9 +46,10 @@ module.exports = function(bot) {
 
     conversation.lastMessage = {
       userId,
-      count: conversation.lastMessage.userId === userId ?
-          conversation.lastMessage.count + 1 :
-          1,
+      count:
+        conversation.lastMessage.userId === userId
+          ? conversation.lastMessage.count + 1
+          : 1,
       text: msg.text,
     };
 
