@@ -1,4 +1,5 @@
 const fs = require('fs');
+const moment = require('moment');
 
 module.exports = function (bot) {
   bot.onText(/\b(grap)\b/i, (msg) => {
@@ -24,8 +25,10 @@ module.exports = function (bot) {
     bot.sendMessage(msg.chat.id, resp);
   });
   bot.onText(/^hmmm/i, (msg) => {
-    const resp = 'wiet';
-    bot.sendMessage(msg.chat.id, resp);
+    if (Math.random() < 0.5) {
+      const resp = 'wiet';
+      bot.sendMessage(msg.chat.id, resp);
+    }
   });
   bot.onText(/^kk /i, (msg) => {
     if (Math.random() < 0.2) {
@@ -40,5 +43,16 @@ module.exports = function (bot) {
   bot.onText(/dudu/i, (msg) => {
     const audio = fs.readFileSync('sounds/sandstorm.wav');
     bot.sendVoice(msg.chat.id, audio);
+  });
+  bot.onText(/^eten/i, (msg) => {
+    const today = moment();
+    if (today.hour() < 12) {
+      const resp = 'nog te vroeg man';
+      bot.sendMessage(msg.chat.id, resp);
+    } else if (today.weekday() === 2) {
+      // indo on wednesdays
+      const resp = 'indo?';
+      bot.sendMessage(msg.chat.id, resp);
+    }
   });
 };
