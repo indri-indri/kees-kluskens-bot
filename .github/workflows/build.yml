@@ -1,0 +1,23 @@
+name: Kees Bot Build CI
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: webfactory/ssh-agent@v0.4.0
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+    - name: Webapp Deploy
+      run: |
+        mkdir -p ~/.ssh
+        ssh-keyscan 149.210.192.197 >> ~/.ssh/known_hosts
+        ssh kees-telegram-bot@149.210.192.197 "git pull && npm i"
+        ssh kees-telegram-bot@149.210.192.197 "sudo systemctl restart kees-telegram-bot"
