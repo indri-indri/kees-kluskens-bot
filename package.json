@@ -4,7 +4,8 @@
   "description": "Telegram KeesKluskensBot.",
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "start:prod": "node index.js"
   },
   "dependencies": {
     "express": "^4.14.0",

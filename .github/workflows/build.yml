@@ -19,5 +19,5 @@ jobs:
       run: |
         mkdir -p ~/.ssh
         ssh-keyscan 149.210.192.197 >> ~/.ssh/known_hosts
-        ssh kees-telegram-bot@149.210.192.197 "git pull && npm i"
+        ssh kees-telegram-bot@149.210.192.197 "cd app && git pull && npm i"
         ssh kees-telegram-bot@149.210.192.197 "sudo systemctl restart kees-telegram-bot"
