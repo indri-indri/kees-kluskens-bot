@@ -44,7 +44,7 @@ module.exports = function (bot) {
     const audio = fs.readFileSync('sounds/sandstorm.wav');
     bot.sendVoice(msg.chat.id, audio);
   });
-  bot.onText(/^eten/i, (msg) => {
+  bot.onText(/^eten|food|lunch/i, (msg) => {
     const today = moment();
     if (today.hour() < 12) {
       const resp = 'nog te vroeg man';
