@@ -24,6 +24,10 @@ module.exports = function (bot) {
     const resp = 'als het goed is wel man';
     bot.sendMessage(msg.chat.id, resp);
   });
+  bot.onText(/angelsaksisch/i, (msg) => {
+    const resp = 'doe es niet zo angelsaksisch';
+    bot.sendMessage(msg.chat.id, resp);
+  });
   bot.onText(/^hmmm/i, (msg) => {
     if (Math.random() < 0.5) {
       const resp = 'wiet';
