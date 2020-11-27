@@ -1,6 +1,9 @@
 const fs = require('fs');
 const moment = require('moment');
 
+// Keep track of when we responded about food for the last time so we only do it once a day maximum
+let lastSaidFood = null;
+
 module.exports = function (bot) {
   bot.onText(/\b(grap)\b/i, (msg) => {
     const resp = 'je LEVEN is een grap!';
@@ -50,6 +53,9 @@ module.exports = function (bot) {
   });
   bot.onText(/^eten|food|lunch/i, (msg) => {
     const today = moment();
+    if (lastSaidFood && lastSaidFood.isSame(today, 'day')) {
+      return;
+    }
     if (today.hour() < 12) {
       const resp = 'nog te vroeg man';
       bot.sendMessage(msg.chat.id, resp);
@@ -58,5 +64,6 @@ module.exports = function (bot) {
       const resp = 'indo?';
       bot.sendMessage(msg.chat.id, resp);
     }
+    lastSaidFood = today;
   });
 };
