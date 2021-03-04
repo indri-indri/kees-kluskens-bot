@@ -51,7 +51,7 @@ module.exports = function (bot) {
     const audio = fs.readFileSync('sounds/sandstorm.wav');
     bot.sendVoice(msg.chat.id, audio);
   });
-  bot.onText(/^eten|food|lunch/i, (msg) => {
+  bot.onText(/^(eten|food|lunch)/i, (msg) => {
     const today = moment();
     if (lastSaidFood && lastSaidFood.isSame(today, 'day')) {
       return;
