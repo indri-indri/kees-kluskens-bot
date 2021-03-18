@@ -8,7 +8,7 @@ module.exports = function (bot) {
     bot.sendMessage(msg.chat.id, resp);
   });
   bot.onText(/;p\[/, (msg) => {
-    bot.sendSticker(msg.chat.id, 'CAADAgADYgMAAvoLtghdGzKPtFIboQI');
+    bot.sendSticker(msg.chat.id, 'CAACAgIAAxkBAAECExhgU2-LjHD8UhnFrTjjvBCBULIZ4AACXwMAAm2wQgMyyx-kfX-Q7x4E');
   });
   bot.onText(/ik.*ihe/i, (msg) => {
     const resp = 'ik ook bedankt';
